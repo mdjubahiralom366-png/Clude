@@ -1,0 +1,53 @@
+language rust
+words kwroot miss=plain {
+  i8:type:1 i16:type:1 i32:type:1 i64:type:1 i128:type:1 isize:type:1 u8:type:1 u16:type:1 u32:type:1 u64:type:1 u128:type:1 usize:type:1 f32:type:1 f64:type:1 str:type:1 char:type:1 bool:type:1 Box:type:1 Option:type:1 Result:type:1 String:type:1 Vec:type:1 abstract:keyword:1 as:keyword:1 async:keyword:1 await:keyword:1 become:keyword:1 box:keyword:1 break:keyword:1 const:keyword:1 continue:keyword:1 crate:keyword:1 do:keyword:1 dyn:keyword:1 else:keyword:1 enum:keyword:1 extern:keyword:1 false:literal:1 final:keyword:1 fn:keyword:1 for:keyword:0 if:keyword:0 impl:keyword:1 in:keyword:0 let:keyword:1 loop:keyword:1 macro:keyword:1 match:keyword:1 mod:keyword:1 move:keyword:1 mut:keyword:1 override:keyword:1 priv:keyword:1 pub:keyword:1 ref:keyword:1 return:keyword:1 self:keyword:1 Self:keyword:1 static:keyword:1 struct:keyword:1 super:keyword:1 trait:keyword:1 true:literal:1 try:keyword:1 type:keyword:1 typeof:keyword:1 union:keyword:1 unsafe:keyword:1 unsized:keyword:1 use:keyword:1 virtual:keyword:1 where:keyword:1 while:keyword:1 yield:keyword:1 Some:literal:1 None:literal:1 Ok:literal:1 Err:literal:1 "drop ":built_in:1 Copy:built_in:1 Send:built_in:1 Sized:built_in:1 Sync:built_in:1 Drop:built_in:1 Fn:built_in:1 FnMut:built_in:1 FnOnce:built_in:1 ToOwned:built_in:1 Clone:built_in:1 Debug:built_in:1 PartialEq:built_in:1 PartialOrd:built_in:1 Eq:built_in:1 Ord:built_in:1 AsRef:built_in:1 AsMut:built_in:1 Into:built_in:1 From:built_in:1 Default:built_in:1 Iterator:built_in:1 Extend:built_in:1 IntoIterator:built_in:1 DoubleEndedIterator:built_in:1 ExactSizeIterator:built_in:1 SliceConcatExt:built_in:1 ToString:built_in:1 assert!:built_in:1 assert_eq!:built_in:1 bitflags!:built_in:1 bytes!:built_in:1 cfg!:built_in:1 col!:built_in:1 concat!:built_in:1 concat_idents!:built_in:1 debug_assert!:built_in:1 debug_assert_eq!:built_in:1 env!:built_in:1 eprintln!:built_in:1 panic!:built_in:1 file!:built_in:1 format!:built_in:1 format_args!:built_in:1 include_bytes!:built_in:1 include_str!:built_in:1 line!:built_in:1 local_data_key!:built_in:1 module_path!:built_in:1 option_env!:built_in:1 print!:built_in:1 println!:built_in:1 select!:built_in:1 stringify!:built_in:1 try!:built_in:1 unimplemented!:built_in:1 unreachable!:built_in:1 vec!:built_in:1 write!:built_in:1 writeln!:built_in:1 macro_rules!:built_in:1 assert_ne!:built_in:1 debug_assert_ne!:built_in:1
+}
+words kw25 miss=plain {
+  Self:keyword:1 "drop ":built_in:1 Copy:built_in:1 Send:built_in:1 Sized:built_in:1 Sync:built_in:1 Drop:built_in:1 Fn:built_in:1 FnMut:built_in:1 FnOnce:built_in:1 ToOwned:built_in:1 Clone:built_in:1 Debug:built_in:1 PartialEq:built_in:1 PartialOrd:built_in:1 Eq:built_in:1 Ord:built_in:1 AsRef:built_in:1 AsMut:built_in:1 Into:built_in:1 From:built_in:1 Default:built_in:1 Iterator:built_in:1 Extend:built_in:1 IntoIterator:built_in:1 DoubleEndedIterator:built_in:1 ExactSizeIterator:built_in:1 SliceConcatExt:built_in:1 ToString:built_in:1 assert!:built_in:1 assert_eq!:built_in:1 bitflags!:built_in:1 bytes!:built_in:1 cfg!:built_in:1 col!:built_in:1 concat!:built_in:1 concat_idents!:built_in:1 debug_assert!:built_in:1 debug_assert_eq!:built_in:1 env!:built_in:1 eprintln!:built_in:1 panic!:built_in:1 file!:built_in:1 format!:built_in:1 format_args!:built_in:1 include_bytes!:built_in:1 include_str!:built_in:1 line!:built_in:1 local_data_key!:built_in:1 module_path!:built_in:1 option_env!:built_in:1 print!:built_in:1 println!:built_in:1 select!:built_in:1 stringify!:built_in:1 try!:built_in:1 unimplemented!:built_in:1 unreachable!:built_in:1 vec!:built_in:1 write!:built_in:1 writeln!:built_in:1 macro_rules!:built_in:1 assert_ne!:built_in:1 debug_assert_ne!:built_in:1 i8:type:1 i16:type:1 i32:type:1 i64:type:1 i128:type:1 isize:type:1 u8:type:1 u16:type:1 u32:type:1 u64:type:1 u128:type:1 usize:type:1 f32:type:1 f64:type:1 str:type:1 char:type:1 bool:type:1 Box:type:1 Option:type:1 Result:type:1 String:type:1 Vec:type:1
+}
+rule eng3 { " " " "* eng3sep eng3sep eng3sep }
+rule eng3sep { eng3w "."? ":"? ( "." " " / " " ) }
+rule eng3w { eng3con / eng3hyp / eng3short / eng3cap }
+rule eng3con { [A-Za-z] [A-Za-z]* "'" ( "d" / "ve" / "re" / "ll" / "t" / "s" / "n" ) }
+rule eng3hyp { [A-Za-z] [A-Za-z]* "-" [a-z] [a-z]* }
+rule eng3short { ( "is" / "so" / "us" / "to" / "at" / "if" / "in" / "it" / "on" / "I" / "a" ) ![A-Za-z] }
+rule eng3cap { [A-Za-z] [a-z] [a-z] [a-z]* }
+rule h_r0 { [0-9A-Z_a-z] h_r0 / !"'" }
+rule h_r1 { [0-9A-F_a-f] h_r1 / ( ( ( [iu] ( "8" / "16" / "32" / "64" / "128" / "size" ) / "f" ( "32" / "64" ) ) )? ) }
+rule h_r2 { [0-9A-F_a-f] h_r1 }
+rule __kwscanpat_kwroot { [A-Za-z] [0-9A-Z_a-z]* "!"? }
+rule __kwscanpat_kw25 { [0-9A-Z_a-z] [0-9A-Z_a-z]* }
+rule m0 scope=comment rel=0 { "//" ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m1 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m2 rel=1 { eng3 }
+rule m0__resume { ( m1 / m2 / !( &( [\n\r] / eof ) ) any )* ( rel(1){ &( [\n\r] / eof ) } / eoftrunc ) }
+rule m3 scope=comment rel=0 { "/*" ( m3 / m4 / m5 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m4 rel=0 { [ ]* cap scope=doctag rel=0 { ( "TODO" / "FIXME" / "NOTE" / "BUG" / "OPTIMIZE" / "HACK" / "XXX" ) ":" } }
+rule m5 rel=1 { eng3 }
+rule m3__resume { ( m3 / m4 / m5 / !( "*/" ) any )* ( rel(1){ "*/" } / eoftrunc ) }
+rule m6 scope=string rel=0 { "b"? "\"" ( m7 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m7 rel=0 { "\\" any }
+rule m6__resume { ( m7 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m8 scope=symbol rel=1 { "'" [A-Z_a-z] h_r0 }
+rule m9 scope=string rel=1 { "b"? "r" delim 1 { "#"* } "\"" ( !( "\"" samedelim 1 !"#" ) ( ( [^\n\r] / "\n" ) ) )* "\"" samedelim 1 !"#" }
+rule m10 scope=string rel=0 { "b"? "'" ( m11 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m11 scope=char.escape rel=1 { "\\" ( "'" / [0-9A-Z_a-z] / "x" [0-9A-Z_a-z] [0-9A-Z_a-z] / "u" [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] / "U" [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] [0-9A-Z_a-z] ) }
+rule m10__resume { ( m11 / !"'" any )* ( rel(1){ "'" } / eoftrunc ) }
+rule m12 scope=number rel=0 { nb [a-zA-Z0-9_] "0b" [01_] [01_]* ( ( [iu] ( "8" / "16" / "32" / "64" / "128" / "size" ) / "f" ( "32" / "64" ) ) )? }
+rule m13 scope=number rel=0 { nb [a-zA-Z0-9_] "0o" [0-7_] [0-7_]* ( ( [iu] ( "8" / "16" / "32" / "64" / "128" / "size" ) / "f" ( "32" / "64" ) ) )? }
+rule m14 scope=number rel=0 { nb [a-zA-Z0-9_] "0x" h_r2 }
+rule m15 scope=number rel=0 { nb [a-zA-Z0-9_] [0-9] [0-9_]* ( "." [0-9_] [0-9_]* )? ( [Ee] [+\-]? [0-9_] [0-9_]* )? ( ( [iu] ( "8" / "16" / "32" / "64" / "128" / "size" ) / "f" ( "32" / "64" ) ) )? }
+rule m16 rel=1 { cap scope=keyword rel=0 mc=1 { "fn" } [\t-\r ] [\t-\r ]* cap scope=title.function rel=0 mc=1 { ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) } }
+rule m17 scope=meta rel=0 { "#" "!"? "[" ( m18 / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m18 scope=string rel=0 { "\"" ( m19 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m19 rel=0 { "\\" any }
+rule m18__resume { ( m19 / !"\"" any )* ( rel(1){ "\"" } / eoftrunc ) }
+rule m17__resume { ( m18 / !"]" any )* ( rel(1){ "]" } / eoftrunc ) }
+rule m20 rel=1 { cap scope=keyword rel=0 mc=1 { "let" } [\t-\r ] [\t-\r ]* ( ( cap scope=keyword rel=0 mc=1 { "mut" [\t-\r ] [\t-\r ]* } cap scope=variable rel=0 mc=1 { ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) } ) / ( cap scope=variable rel=0 mc=1 { ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) } ) ) }
+rule m21 rel=1 { cap scope=keyword rel=0 mc=1 { "for" } [\t-\r ] [\t-\r ]* ( cap scope=variable rel=0 mc=1 { "r#" [A-Z_a-z] [0-9A-Z_a-z]* } [\t-\r ] [\t-\r ]* cap scope=keyword rel=0 mc=1 { "in" } / cap scope=variable rel=0 mc=1 { [A-Z_a-z] [0-9A-Z_a-z]* } [\t-\r ] [\t-\r ]* cap scope=keyword rel=0 mc=1 { "in" } ) }
+rule m22 rel=1 { cap scope=keyword rel=0 mc=1 { "type" } [\t-\r ] [\t-\r ]* cap scope=title.class rel=0 mc=1 { ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) } }
+rule m23 rel=1 { cap scope=keyword rel=0 mc=1 { ( "trait" / "enum" / "struct" / "union" / "impl" / "for" ) } [\t-\r ] [\t-\r ]* cap scope=title.class rel=0 mc=1 { ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) } }
+rule m24 rel=1 { kwscan kw25 __kwscanpat_kw25 { [A-Za-z] [0-9A-Z_a-z]* "::" } }
+rule m25 scope=punctuation rel=1 { "->" }
+rule m26 scope=title.function.invoke rel=0 { nb [a-zA-Z0-9_] !( ( "let" / "for" / "while" / "if" / "else" / "match" ![a-zA-Z0-9_] ) ) ( "r#" [A-Za-z] [0-9A-Z_a-z]* &( [\t-\r ]* "(" ) / [A-Za-z] [0-9A-Z_a-z]* &( [\t-\r ]* "(" ) ) }
+rule root { ( m0 / m3 / m6 / m8 / m9 / m10 / m12 / m13 / m14 / m15 / m16 / m17 / m20 / m21 / m22 / m23 / m24 / m25 / m26 / illegalx { "</" } / kw kwroot { [A-Za-z] ( !( "b"? "\"" / "b"? "r" delim 1 { "#"* } "\"" ( !( "\"" samedelim 1 !"#" ) ( ( [^\n\r] / "\n" ) ) )* "\"" samedelim 1 !"#" / "b"? "'" / "fn" [\t-\r ] [\t-\r ]* ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) / "let" [\t-\r ] [\t-\r ]* ( ( "mut" [\t-\r ] [\t-\r ]* ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) ) / ( ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) ) ) / "for" [\t-\r ] [\t-\r ]* ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ] [\t-\r ]* "in" / [A-Z_a-z] [0-9A-Z_a-z]* [\t-\r ] [\t-\r ]* "in" ) / "type" [\t-\r ] [\t-\r ]* ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) / ( "trait" / "enum" / "struct" / "union" / "impl" / "for" ) [\t-\r ] [\t-\r ]* ( "r#" [A-Z_a-z] [0-9A-Z_a-z]* / [A-Z_a-z] [0-9A-Z_a-z]* ) / [A-Za-z] [0-9A-Z_a-z]* "::" ) [0-9A-Z_a-z] )* "!"? } / any )* eof }
